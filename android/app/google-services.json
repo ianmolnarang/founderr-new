@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "740217175032",
+    "firebase_url": "https://founderr-bbf7a-default-rtdb.firebaseio.com",
+    "project_id": "founderr-bbf7a",
+    "storage_bucket": "founderr-bbf7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740217175032:android:ac8027a4508e2a26b0f40d",
+        "android_client_info": {
+          "package_name": "com.founderr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740217175032-vtqvoh7raiaqc2sn2lu0llnk815ugkdn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.founderr",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "740217175032-2lge0q52mgs0m4ebua7mnok6j9c7ukfp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrF6RO_9zyNq7J5Uw9mE8JMCOtIw7EmaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740217175032-2lge0q52mgs0m4ebua7mnok6j9c7ukfp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

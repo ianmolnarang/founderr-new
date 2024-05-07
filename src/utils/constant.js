@@ -1,0 +1,20 @@
+export const RouteName = {
+  gender: 'Gender',
+  location: 'Location',
+  exprience: 'Exprience',
+  education: 'Education',
+  skills: 'Skills',
+  home: 'Home',
+  bottomTab: 'Bottom Tab',
+  personalDetails: 'Personal details',
+  profile: 'Profile',
+  addInformation: 'AddInformation',
+  completeProfile: 'CompleteProfile',
+  news: 'News',
+  newsPage: 'NewsPage',
+  newsEducation: 'NewsEducation',
+  newsChapters: 'NewsChapters',
+  eachChapterNews: 'EachChapterNews',
+  settings: 'Settings',
+  work: 'Work'
+};
