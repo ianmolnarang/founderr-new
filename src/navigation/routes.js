@@ -30,20 +30,29 @@ import HomeScreen from '../container/HomeScreen';
 import Settings from '../container/Settings';
 import Main from '../container/UserDetails';
 import { MarkerAnimated } from 'react-native-maps';
-import Work from '../container/UserDetails/work'
+import Work from '../container/UserDetails/work';
+import Conditions from '../container/Settings/conditions';
+import Policy from '../container/Settings/policy';
+import Splash from '../container/onBoardingScreens/splashScreen';
+
+
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={RouteName.Main}>
-      <Stack.Screen name="Home" options={{headerShown: false}} component={Main} />
+      <Stack.Navigator initialRouteName={RouteName.Splash}>
+      <Stack.Screen name="Home" options={{headerShown: false}} component={Splash} />
+        <Stack.Screen name="ScreenOne" options={{headerShown: false}} component={ScreenOne} />
         <Stack.Screen name="ScreenTwo" options={{headerShown: false}} component={ScreenTwo} />
         <Stack.Screen name="ScreenThree" options={{headerShown: false}} component={ScreenThree} />
         <Stack.Screen name="Login" options={{headerShown: false}} component={Login} />
         <Stack.Screen name="HomeScreen" options={{headerShown: false}} component={HomeScreen} />
         <Stack.Screen name="Main" options={{headerShown: false}} component={Main} />
         <Stack.Screen name="Work" options={{headerShown: false}} component={Work} />
+        <Stack.Screen name="Conditions" options={{headerShown: false}} component={Conditions} />
+        <Stack.Screen name="Policy" options={{headerShown: false}} component={Policy} />
+        <Stack.Screen name="Splash" options={{headerShown: false}} component={Splash} />
         <Stack.Screen
           name={RouteName.gender}
           component={Gender}

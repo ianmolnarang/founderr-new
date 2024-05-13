@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {hp, normalize, wp} from '../../utils/responsiveScreen';
+
 import {colors, fonts} from '../../assests/Theme/Color';
 import EachNews from './EachNews';
 import {getFacilities} from '../../api/News';
@@ -29,13 +30,11 @@ const AllNews = ({}) => {
       setLoading(false);
     }
   };
-
   console.log(news);
   return (
-    <View style={{marginVertical: hp(2)}}>
+    <View style={{marginVertical: hp(2) , top:-hp(5)}}>
       <View style={styles.topButtonContainer}>
         <Text>News</Text>
-        <Text>Show More</Text>
       </View>
 
       {/* each news */}

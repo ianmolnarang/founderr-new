@@ -48,14 +48,12 @@ const News = () => {
                 color: colors.black30,
                 fontFamily: fonts.poppinsRegular,
                 fontSize: normalize(12),
-
                 color: colors.black30,
               }}>
               Have a nice day
             </Text>
           </View>
-
-          <View style={{height: hp(3)}}>
+          <View style={{height: hp(1)}}>
             <Image
               style={{}}
               source={require('../../assests/Images/demoUser.png')}></Image>
@@ -63,7 +61,7 @@ const News = () => {
         </View>
 
         {/* tabs */}
-        <ScrollView horizontal style={styles.tabContainer}>
+        {/* <ScrollView horizontal style={styles.tabContainer}>
           {Object.keys(tabs).map(each => (
             <TouchableOpacity
               onPress={() => tabClicked(each)}
@@ -80,7 +78,7 @@ const News = () => {
               </Text>
             </TouchableOpacity>
           ))}
-        </ScrollView>
+        </ScrollView> */}
       </View>
 
       {/* news */}

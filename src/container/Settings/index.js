@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Alert,
+  Linking, Platform,
 } from 'react-native';
 import React, {useEffect} from 'react';
 import {hp, normalize, wp} from '../../utils/responsiveScreen';
@@ -15,10 +16,29 @@ import SvgIcons from '../../assests/svgs/svgIcons';
 import {getFacilities} from '../../api/News';
 import Swiper from 'react-native-swiper';
 import {Actionsheet, useDisclose, Box, Button} from 'native-base';
-const Settings = () => {
+import Policy from './policy';
+import Conditions from './conditions';
+const Settings = ({navigation}) => {
   const {isOpen, onOpen, onClose} = useDisclose();
 
+
+
+  makeCall = () => {
+
+    let phoneNumber = '';
+    console.log(Platform.OS)
+
+    if (Platform.OS === 'android') {
+      phoneNumber = 'tel:${9760997077}';
+    } else {
+      phoneNumber = 'telprompt:${9760997077}';
+    }
+
+    Linking.openURL(phoneNumber);
+  };
+
   return (
+
     <SafeAreaView
       style={{
         flex: 1,
@@ -94,7 +114,7 @@ const Settings = () => {
         </View>
       </Swiper>
 
-      <TouchableOpacity
+      <TouchableOpacity onPress={makeCall}
         style={{
           position: 'absolute',
           alignSelf: 'center',
@@ -104,7 +124,7 @@ const Settings = () => {
           borderWidth: 2,
           height: hp(6),
           width: wp(40),
-          top: hp(47), // Adjust this value to position the button
+          marginTop: hp(45),
         }}>
         <Text
           style={{
@@ -114,7 +134,7 @@ const Settings = () => {
             fontFamily: fonts.poppinsMedium,
             top: hp(0.5),
           }}>
-          One Call
+          Call Now
         </Text>
       </TouchableOpacity>
 
@@ -125,10 +145,20 @@ const Settings = () => {
         }}>
         <View style={styles.firstMenuContainer}>
           <TouchableOpacity
-            onPress={() => {
-              Alert.alert('You will redirect to edit details');
-            }}>
-            <Text style={styles.menuText}> Update Personal Details </Text>
+        onPress={()=>{
+          navigation.navigate(Policy)
+        }}
+            >
+            <Text style={styles.menuText}> Privacy Policy </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.firstMenuContainer}>
+          <TouchableOpacity
+            onPress={()=>{
+              navigation.navigate(Conditions)
+            }}
+            >
+            <Text style={styles.menuText}> Terms and Conditions </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.firstMenuContainer}>
@@ -137,20 +167,7 @@ const Settings = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.firstMenuContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              Alert.alert('You will redirect to privacy policy');
-            }}>
-            <Text style={styles.menuText}> Privacy Policy </Text>
-          </TouchableOpacity>
-        </View>
 
-        <View style={styles.firstMenuContainer}>
-          <Text style={styles.menuText} onPress={() => {}}>
-            About Us
-          </Text>
-        </View>
       </View>
     </SafeAreaView>
   );
@@ -171,7 +188,6 @@ const styles = StyleSheet.create({
   },
   firstMenuContainer: {
     borderColor: 'grey',
-    borderBottomWidth: 1,
     borderTopWidth: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
