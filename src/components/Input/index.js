@@ -8,8 +8,6 @@ import {
 import React from 'react';
 import {hp, normalize, wp} from '../../utils/responsiveScreen';
 import {colors, fonts} from '../../assests/Theme/Color';
-import SvgIcons from '../../assests/svgs/svgIcons';
-import {STRINGS} from '../../utils/strings';
 import {commonStyle} from '../../utils/commonStyle';
 
 const Input = ({

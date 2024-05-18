@@ -1,13 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import SvgIcons from '../../assests/svgs/svgIcons';
-import { hp, wp } from '../../utils/responsiveScreen';
-import { colors } from '../../assests/Theme/Color';
-import { fontStyle } from '../../utils/commonStyle';
-import { useNavigation } from '@react-navigation/native';
+import {hp, wp} from '../../utils/responsiveScreen';
+import {colors} from '../../assests/Theme/Color';
+import {fontStyle} from '../../utils/commonStyle';
+import {useNavigation} from '@react-navigation/native';
 
-const MainHeader = ({ heading, process }) => {
-  const navigation = useNavigation();
+const MainHeader = ({heading, process, navigation}) => {
+  // const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -15,10 +15,10 @@ const MainHeader = ({ heading, process }) => {
         style={styles.backButton}
         activeOpacity={0.7}
         onPress={() => navigation.goBack()}>
-        <SvgIcons.LeftIcon width={30} height={30} />
+        {/* <SvgIcons.LeftIcon width={30} height={30} /> */}
       </TouchableOpacity>
       <View style={styles.progressContainer}>
-        <View style={[styles.progressBar, { width: process }]} />
+        <View style={[styles.progressBar, {width: process}]} />
       </View>
       <Text style={styles.heading}>{heading}</Text>
     </View>
@@ -27,8 +27,8 @@ const MainHeader = ({ heading, process }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    // flexDirection: 'row',
+    // alignItems: 'center',
     marginHorizontal: wp(5),
   },
   backButton: {
@@ -48,6 +48,8 @@ const styles = StyleSheet.create({
   },
   heading: {
     ...fontStyle.medium14,
+    color: colors.black,
+    marginTop: hp(1),
   },
 });
 

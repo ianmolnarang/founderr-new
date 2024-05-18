@@ -1,7 +1,7 @@
 export const colors = {
   white: '#F5F5F5',
   blue: '#0892D0',
-  blueNew:'#066692',
+  blueNew: '#066692',
   charcoal: '#263539',
   black: '#000000',
   black30: 'rgba(0,0,0,0.3)',
@@ -11,7 +11,7 @@ export const colors = {
   borderColor: '#B7BBBC',
   black100: '#171717',
   red: '#FF0000',
-  black: {
+  black100: {
     100: '#171717',
   },
 

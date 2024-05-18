@@ -14,6 +14,7 @@ const BigButton = ({btnText, btnPress, btnStyle}) => {
           textAlign: 'center',
           fontSize: normalize(18),
           fontFamily: fonts.poppinsMedium,
+          color: colors.black,
         }}>
         {btnText}
       </Text>

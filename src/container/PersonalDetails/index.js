@@ -156,16 +156,17 @@ const PersonalDetails = ({navigation}) => {
       <ScrollView>
         <View
           style={{alignItems: 'center', marginTop: hp(7), marginBottom: hp(2)}}>
-          {profile !== null ? (
-            <Image
-              source={{uri: profile}}
-              style={{width: wp(40), height: wp(40)}}
-              resizeMode="cover"
-              borderRadius={wp(20)}
-            />
-          ) : (
-            <SvgIcons.ProfileUser />
-          )}
+          {
+            profile !== null ? (
+              <Image
+                source={{uri: profile}}
+                style={{width: wp(40), height: wp(40)}}
+                resizeMode="cover"
+                borderRadius={wp(20)}
+              />
+            ) : null
+            // <SvgIcons.ProfileUser />
+          }
           <TouchableOpacity
             onPress={() => setImageVisible(true)}
             activeOpacity={0.7}
@@ -174,7 +175,7 @@ const PersonalDetails = ({navigation}) => {
               bottom: hp(0),
               left: wp(55),
             }}>
-            <SvgIcons.EditIcon />
+            {/* <SvgIcons.EditIcon /> */}
           </TouchableOpacity>
         </View>
 
@@ -212,13 +213,13 @@ const PersonalDetails = ({navigation}) => {
             errorText={errorText}
           />
 
-          {/* <Input
+          <Input
             placeholder={STRINGS.GENDER}
             value={gender}
             editable={false}
             onInputPress={() => setGenderVisible(true)}
             onChangeText={setGender}
-          /> */}
+          />
 
           <Input
             placeholder={STRINGS.PHONENO}
@@ -293,7 +294,6 @@ const PersonalDetails = ({navigation}) => {
           isOpen={imageVisible}
           onClose={() => setImageVisible(false)}>
           <Actionsheet.Content>
-            {/* <Actionsheet.Item> */}
             <View
               style={{
                 flexDirection: 'row',
@@ -308,7 +308,6 @@ const PersonalDetails = ({navigation}) => {
                 <SvgIcons.GalleryIcon width={wp(15)} height={wp(15)} />
               </TouchableOpacity>
             </View>
-            {/* </Actionsheet.Item> */}
           </Actionsheet.Content>
         </Actionsheet>
         <View style={{marginHorizontal: wp(7), marginVertical: wp(3)}}>
@@ -322,5 +321,3 @@ const PersonalDetails = ({navigation}) => {
 export default PersonalDetails;
 
 const styles = StyleSheet.create({});
-
-

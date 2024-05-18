@@ -22,8 +22,11 @@ import DatePicker from 'react-native-date-picker';
 import moment from 'moment';
 import userService from '../../service/userService';
 import firestore from '@react-native-firebase/firestore';
+import {useDispatch} from 'react-redux';
+import {REGISTER_WORK} from '../../service/paths';
 
 const Education = ({navigation, route}) => {
+  const dispatch = useDispatch();
   const userData = route?.params && route?.params?.userData;
   const [tabView, setTabView] = useState(STRINGS.DEGREE);
   const [degree, setDegree] = useState('');
@@ -133,7 +136,7 @@ const Education = ({navigation, route}) => {
           placeholder={STRINGS.START_DATE}
           value={item.startDate}
           editable={false}
-          icon={<SvgIcons.CalendarIcon />}
+          // icon={<SvgIcons.CalendarIcon />}
           onIconPress={() => onCalendarPress('workStart', index)}
           error={startDateError}
           errorText={errorText}
@@ -143,7 +146,7 @@ const Education = ({navigation, route}) => {
           placeholder={STRINGS.END_DATE}
           value={item.endDate}
           editable={false}
-          icon={<SvgIcons.CalendarIcon />}
+          // icon={<SvgIcons.CalendarIcon />}
           onIconPress={() => onCalendarPress('workEnd', index)}
           error={endDateError}
           errorText={errorText}
@@ -170,7 +173,7 @@ const Education = ({navigation, route}) => {
               alignSelf: 'flex-end',
             }}>
             <TouchableOpacity>
-              <SvgIcons.UnCheckIcon width={wp(5)} height={wp(5)} />
+              {/* <SvgIcons.UnCheckIcon width={wp(5)} height={wp(5)} /> */}
             </TouchableOpacity>
             <Text style={styles.workingText}>{STRINGS.CURRENTLY_WORKING}</Text>
           </View>
@@ -230,7 +233,7 @@ const Education = ({navigation, route}) => {
           placeholder={STRINGS.START_DATE}
           value={item.startDate}
           editable={false}
-          icon={<SvgIcons.CalendarIcon />}
+          // icon={<SvgIcons.CalendarIcon />}
           onIconPress={() => onCalendarPress('educationStart', index)}
           error={eduStartError}
           errorText={errorText}
@@ -240,7 +243,7 @@ const Education = ({navigation, route}) => {
           placeholder={STRINGS.END_DATE}
           value={item.endDate}
           editable={false}
-          icon={<SvgIcons.CalendarIcon />}
+          // icon={<SvgIcons.CalendarIcon />}
           onIconPress={() => onCalendarPress('educationEnd', index)}
           error={eduEndError}
           errorText={errorText}
@@ -267,7 +270,7 @@ const Education = ({navigation, route}) => {
               alignSelf: 'flex-end',
             }}>
             <TouchableOpacity>
-              <SvgIcons.UnCheckIcon width={wp(5)} height={wp(5)} />
+              {/* <SvgIcons.UnCheckIcon width={wp(5)} height={wp(5)} /> */}
             </TouchableOpacity>
             <Text style={styles.workingText}>{STRINGS.CURRENTLY_PURSUING}</Text>
           </View>
@@ -320,7 +323,11 @@ const Education = ({navigation, route}) => {
   };
 
   const navigate = () => {
-    navigation.navigate(RouteName.skills);
+    if (tabIndex == 0) {
+      setTabIndex(1);
+    } else {
+    }
+    // navigation.navigate(RouteName.skills);
   };
 
   const onAddMorePress = () => {
@@ -357,7 +364,6 @@ const Education = ({navigation, route}) => {
     setOpen(true);
   };
 
-  
   const checkValidation = () => {
     if (workData[workData.length - 1].companyName.length === 0) {
       setCmpError(true);
@@ -454,7 +460,8 @@ const Education = ({navigation, route}) => {
         //   workData: workData,
         // };
         // setFinalData({...data});
-        setTabIndex(1);
+        // setTabIndex(1);
+        dispatch(userService.registerWorkEdu(REGISTER_WORK, workData));
       }
     } else {
       const ifValid = checkEduValidation();
@@ -463,7 +470,7 @@ const Education = ({navigation, route}) => {
           workData: workData,
           educationData: educationData,
         };
-        saveData();
+        // saveData();
       }
     }
   };
